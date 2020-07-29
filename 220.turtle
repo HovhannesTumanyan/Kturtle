@@ -1,0 +1,36 @@
+kturtle-script-v1.0
+@(reset)
+@(sh)
+@(go) 10@(,)10
+$o=0
+$e=0
+$q=0
+$i=1
+$n=@(ask)"n"
+@(for) $i=1 @(to) $n{
+
+$x=@(round)(@(random) -50@(,)50) 
+@(print) $x
+@(gox) @(getx)+20
+
+@(if)($x>0){
+$e=$e+1
+}@(else){@(if)($x<0){$o=$o+1}}
+
+
+@(if) (@(getx)>387){
+@(gox) 10
+@(goy) @(gety)+10
+}
+}
+@(center)
+@(gox) @(getx)-100
+@(print) "bacasakan`"
+@(gox) @(getx)+60
+@(print) $o
+
+@(gox) @(getx)+80
+@(print) "drakan`"
+@(gox) @(getx)+60
+@(print) $e
+

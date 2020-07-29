@@ -1,0 +1,33 @@
+kturtle-script-v1.0
+@(reset)
+@(sh) 
+@(go) 10@(,)10
+
+
+$q=0
+$i=1
+$n=@(ask)"n"
+$t=@(ask)"t"
+
+
+@(for) $i=1 @(to) $n{
+
+$x=@(round)(@(random) -50@(,)50) 
+$k=@(sqrt)($x*$x)
+@(print) $x
+@(gox) @(getx)+20
+
+@(if)($k<$t){
+$q=$q+1
+}
+
+
+
+@(if) (@(getx)>387){
+@(gox) 10
+@(goy) @(gety)+10
+}
+}
+@(center)
+@(print) $q
+
